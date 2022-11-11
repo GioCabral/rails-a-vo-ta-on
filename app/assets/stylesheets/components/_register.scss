@@ -1,0 +1,29 @@
+.register{
+  margin-top: 40px;
+  background-color: white;
+  border-radius: 20px;
+  max-width: 600px;
+  height: min-content;
+}
+.register_content{
+  padding: 40px;
+}
+.register_title{
+  display: flex;
+  justify-content: center;
+
+}
+#all_width{
+  width: 100%;
+  margin: 15px 0px;
+}
+#text_deco{
+  text-decoration: none;
+}
+
+.container_register{
+  display: flex;
+  justify-content: center;
+  position: relative;
+  height: 90vh;
+}

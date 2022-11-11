@@ -1,0 +1,62 @@
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <div class="container-fluid">
+    <%= link_to "#", class: "navbar-brand" do %>
+      <%= image_tag "volovo.png" %>
+    <% end %>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto">
+        <%# if user_signed_in? %>
+          <% if user_signed_in? %>
+          <li class="nav-item" id="avatar_migrate">
+              <%= cl_image_tag current_user.photo.key, class:"avatar"%>
+          </li>
+          <% end %>
+          <li class="nav-item active">
+            <%= link_to "Como funciona", "#", class: "nav-link" %>
+          </li>
+          <div class="bar_separate">
+              <p>|</p>
+          </div>
+          <li class="nav-item">
+            <%= link_to "Planos", "#", class: "nav-link" %>
+          </li>
+          <div class="bar_separate">
+              <p>|</p>
+          </div>
+          <li class="nav-item">
+            <%= link_to "Contato", "#", class: "nav-link" %>
+          </li>
+          <% if user_signed_in? %>
+          <li class="nav-item" id="avatar_migrate">
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
+          </li>
+          <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav_login" %>
+          <% end %>
+      </ul>
+    </div>
+    <div class="avatar_nav">
+      <ul class="navbar-nav">
+          <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+             <%= cl_image_tag current_user.photo.key, crop: :thumb, class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= link_to "Action", "#", class: "dropdown-item" %>
+              <%= link_to "Another action", "#", class: "dropdown-item" %>
+              <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+            </div>
+          </li>
+        <% else %>
+          <li class="nav-item">
+            <%= link_to "Login", new_user_session_path, class: "nav_login" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
