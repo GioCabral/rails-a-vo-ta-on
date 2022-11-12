@@ -54,9 +54,13 @@
   div.avatar_nav{
     display: none;
   }
+
 }
 @media screen and (min-width: 600px) {
   #avatar_migrate{
+    display: none;
+  }
+  #small_login{
     display: none;
   }
 }
