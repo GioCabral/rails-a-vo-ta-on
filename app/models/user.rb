@@ -6,4 +6,5 @@ class User < ApplicationRecord
   has_one_attached :photo
 
   validates :name, :cpf, presence: true
+  has_many :payment_methods
 end
