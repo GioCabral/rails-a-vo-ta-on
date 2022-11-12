@@ -57,14 +57,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_182748) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.string "close"
+    t.boolean "close"
     t.integer "grandchild_id"
     t.integer "grandparent_id"
     t.string "grandchild_type"
     t.string "grandparent_type"
-    t.bigint "issue_id", null: false
-    t.bigint "category_id", null: false
-    t.bigint "application_id", null: false
+    t.bigint "issue_id"
+    t.bigint "category_id"
+    t.bigint "application_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["application_id"], name: "index_chatrooms_on_application_id"

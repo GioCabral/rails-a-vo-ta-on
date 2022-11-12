@@ -4,7 +4,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_one_attached :photo
+  has_many :payment_methods
+  has_many  :grandparent_chatrooms, :foreign_key => "grandparent_id", :class_name => "chatrooms"
+  has_many  :grandchild_chatrooms, :foreign_key => "grandchild_id", :class_name => "chatrooms"
 
   validates :name, :cpf, presence: true
-  has_many :payment_methods
 end
