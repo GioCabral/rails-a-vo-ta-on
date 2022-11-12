@@ -1,4 +1,8 @@
 class ChatroomsController < ApplicationController
+  def index
+    @chatrooms = Chatroom.where(grandchild: nil)
+  end
+
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
@@ -9,8 +13,13 @@ class ChatroomsController < ApplicationController
   end
 
   def create
-    @chatroom = Chatroom.news
-    @chatroom.grandparent_id = current_user
-    @chatroom.save
+    @chatroom = Chatroom.new
+    @chatroom.grandparent = current_user
+    if @chatroom.save
+      redirect_to chatroom_path(@chatroom)
+    else
+      @chartroom.errors.messages
+      raise
+    end
   end
 end

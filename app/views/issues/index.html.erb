@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="title">
+    <h3>Preciso de ajuda com...</h3>
+  </div>
+  <div class="row">
+    <% @issues.each do |issue| %>
+    <div class="col-4 mt-3" id="center">
+    </div>
+    <div class="col-4 mt-3" id="center">
+      <div class="card-category-long">
+        <%= link_to new_chatroom_path do %>
+          <p><%= issue.name %></p>
+        <% end %>
+      </div>
+
+    </div>
+    <div class="col-4 mt-3" id="center">
+    </div>
+    <% end %>
+  </div>
+</div>

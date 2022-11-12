@@ -1,6 +1,6 @@
-class CreateApplications < ActiveRecord::Migration[7.0]
+class CreateApps < ActiveRecord::Migration[7.0]
   def change
-    create_table :applications do |t|
+    create_table :apps do |t|
       t.string :name
       t.references :category, null: false, foreign_key: true
 
