@@ -1,0 +1,5 @@
+<% if user_signed_in? && current_user.role == "Avós" %>
+  <%= link_to "Tenho problemas", category_index_path  %>
+<% else !user_signed_in? %>
+  <h1>pag padrao</h1>
+<% end %>

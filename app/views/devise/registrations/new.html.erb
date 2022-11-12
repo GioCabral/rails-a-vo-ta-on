@@ -18,6 +18,8 @@
                         required: true %>
             <%= f.input :cpf,
                         required: true %>
+            <%= f.input :role,
+                        required: true, collection: ["Neto", "Avós"] %>
             <%= f.input :password,
                         required: true,
                         hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
