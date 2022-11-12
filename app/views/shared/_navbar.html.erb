@@ -36,7 +36,7 @@
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "nav-link" %>
           </li>
           <% else %>
-          <%= link_to "Login", new_user_session_path, class: "nav_login" %>
+            <%= link_to "Login", new_user_session_path, class: "nav_login", id:"small_login"%>
           <% end %>
       </ul>
     </div>
