@@ -8,8 +8,7 @@ class CreateChatrooms < ActiveRecord::Migration[7.0]
       t.string :grandparent_type
       t.references :issue, foreign_key: true
       t.references :category, foreign_key: true
-      t.references :application, foreign_key: true
-
+    
       t.timestamps
     end
   end
