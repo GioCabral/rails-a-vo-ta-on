@@ -1,0 +1,18 @@
+.dropdown-menu {
+  background-color: #58BC82;
+  border-radius: 12px;
+}
+
+.dropdown-item {
+  color: white;
+  border-radius: 5px;
+
+  &:hover{
+    transition: 0.4s;
+    color:#553B65;
+  }
+}
+
+.show{
+  transition: 0.4s;
+}
