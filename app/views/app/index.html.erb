@@ -6,7 +6,7 @@
     <% @app.each do |ap| %>
     <div class="col-lg-4 col-md-6 col-sm-12 mt-3" id="center">
       <div class="card-category">
-        <%= link_to category_issues_path(@category) do %>
+        <%= link_to category_app_issues_path(app_id: ap.id) do %>
         <p><%= ap.name %></p>
         <% end %>
       </div>
