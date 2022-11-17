@@ -1,0 +1,67 @@
+.messages{
+  height: 500px;
+  overflow-y:scroll;
+}
+#message-my{
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 10px 0 0;
+  p{
+    background-color: white;
+    margin: 25px 5px 0 0;
+    border: 1px solid white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 10px 0 10px 10px;
+    color: #340053;
+  }
+}
+#message-message{
+  display: flex;
+  justify-content: flex-start;
+  padding: 0 0 0 10px;
+  p{
+    background-color: white;
+    margin: 25px 0 0 5px;
+    border: 1px solid white;
+    padding: 10px;
+    width: fit-content;
+    border-radius: 0 10px 10px 10px;
+    color: #340053;
+  }
+}
+#message-infomy{
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 15px 0 0;
+  strong{
+    color: white;
+    font-size: 10px;
+  }
+  i{
+    color: white;
+    font-size: 10px;
+  }
+}
+#message-infomessage{
+  display: flex;
+  justify-content: flex-start;
+  padding: 10px 0 0 15px;
+  strong{
+    color: white;
+    font-size: 10px;
+  }
+  i{
+    color: white;
+    font-size: 10px;
+  }
+}
+.message_container{
+  padding-top: 3px;
+  background-color: #340053;
+  border-radius: 25px;
+}
+.form_message{
+  padding: 10px 20px;
+  margin: 0;
+}
