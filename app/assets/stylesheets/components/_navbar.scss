@@ -1,9 +1,14 @@
+.container-fluid {
+  margin: 10px 90px;
+}
+
 .navbar-lewagon {
   justify-content: space-between;
 }
 .navbar-brand{
   margin-bottom: 35px;
   padding-left: 15px;
+  flex-grow: 1;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -20,6 +25,11 @@
   font-size: 22px;
   color: #FFBBF4;
 }
+
+.nav-item{
+  margin: 0px 15px;
+}
+
 .nav-link{
   color: #FFBBF4;
   font-size: 25px;
@@ -28,14 +38,7 @@
     color: white;
   }
 }
-.avatar_nav{
-  height: 80px;
-}
-.avatar{
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-}
+
 #navbarDropdown{
   height: 60px;
   width: 60px;
