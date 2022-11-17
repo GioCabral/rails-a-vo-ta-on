@@ -1,1 +1,8 @@
 <h1>birinait</h1>
+<% @chatrooms.each do |chatroom| %>
+  <p><%= chatroom.grandparent.name %></p>
+  <p><%="#{chatroom.category.name} > #{chatroom.app.name} > #{chatroom.issue.name}"%></p>
+  <%= link_to join_chat_path(chatroom: chatroom.id), data: { 'turbo-method' => :put } do %>
+    <p><%= chatroom.id %></p>
+  <% end %>
+<% end %>

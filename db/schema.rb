@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_223141) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_16_173500) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -66,6 +66,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_223141) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "app_id", null: false
+    t.index ["app_id"], name: "index_chatrooms_on_app_id"
     t.index ["category_id"], name: "index_chatrooms_on_category_id"
     t.index ["issue_id"], name: "index_chatrooms_on_issue_id"
   end
@@ -116,6 +118,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_12_223141) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "apps", "categories"
+  add_foreign_key "chatrooms", "apps"
   add_foreign_key "chatrooms", "categories"
   add_foreign_key "chatrooms", "issues"
   add_foreign_key "issues", "categories"
