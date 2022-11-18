@@ -1,0 +1,55 @@
+.register_content {
+  background-color: $green-button;
+  color: white;
+  border-radius: 20px;
+  padding: 65px;
+  width: 390px;
+  box-shadow: var(--bs-border-color-translucent) 20px 20px 30px;
+
+  &:hover{
+    background-color:#20c997;
+    transition: 0.4s;
+    box-shadow: var(--bs-border-color-translucent) 20px 20px 30px;
+  }
+}
+
+.register_title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.email, .password {
+  text-align: center;
+}
+.form-inputs{
+  font-size: x-large;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+.form-control {
+  border-radius: 20px;
+  color: #5b5b5b;
+  font-size: large;
+}
+
+.btn-login {
+  background-color: #553B65;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: large;
+  font-weight: bold;
+
+  &:hover{
+    background-color: #6a44ad;
+  }
+}
+
+.redirect-links > a{
+  color: $main-color;
+  transition: 0.4s;
+
+  &:hover{
+    color: white;
+  }
+}
