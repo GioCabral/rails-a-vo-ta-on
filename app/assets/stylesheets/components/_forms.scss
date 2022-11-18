@@ -4,7 +4,13 @@
   border-radius: 20px;
   padding: 65px;
   width: 390px;
-  box-shadow: 10px 10px #8888883b;
+  box-shadow: var(--bs-border-color-translucent) 20px 20px 30px;
+
+  &:hover{
+    background-color:#20c997;
+    transition: 0.4s;
+    box-shadow: var(--bs-border-color-translucent) 20px 20px 30px;
+  }
 }
 
 .register_title {
@@ -41,6 +47,7 @@
 
 .redirect-links > a{
   color: $main-color;
+  transition: 0.4s;
 
   &:hover{
     color: white;
