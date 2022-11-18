@@ -1,0 +1,48 @@
+.register_content {
+  background-color: $green-button;
+  color: white;
+  border-radius: 20px;
+  padding: 65px;
+  width: 390px;
+  box-shadow: 10px 10px #8888883b;
+}
+
+.register_title {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.email, .password {
+  text-align: center;
+}
+.form-inputs{
+  font-size: x-large;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+}
+.form-control {
+  border-radius: 20px;
+  color: #5b5b5b;
+  font-size: large;
+}
+
+.btn-login {
+  background-color: #553B65;
+  border: none;
+  padding: 12px;
+  border-radius: 20px;
+  font-size: large;
+  font-weight: bold;
+
+  &:hover{
+    background-color: #6a44ad;
+  }
+}
+
+.redirect-links > a{
+  color: $main-color;
+
+  &:hover{
+    color: white;
+  }
+}
