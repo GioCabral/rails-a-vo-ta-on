@@ -1,13 +1,9 @@
 import { Application } from "@hotwired/stimulus"
-import { definitionsFromContext } from '@hotwired/stimulus-webpack-helpers'
 
 const application = Application.start()
 
 // Configure Stimulus development experience
-application.debug = false
+application.debug = true
 window.Stimulus   = application
-const context = require.context('./controllers', true, /\.js$/)
-application.load(definitionsFromContext(context))
-application.stimulusUseDebug = process.env.NODE_ENV === 'development'
 
 export { application }
