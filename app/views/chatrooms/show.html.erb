@@ -1,35 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-6" >
-      <div class="message_container">
-        <div class="messages">
+      <div class="message_container"
+      data-controller="chatroom-subscription"
+      data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>">
+        <div class="messages" data-chatroom-subscription-target="messages">
           <% if @chatroom.messages.length < 1 %>
             <div class="message">
               <p>Nada de mensagens</p>
             </div>
           <% else %>
             <% @chatroom.messages.each do |message| %>
-              <% user = User.find(message.user_id) %>
-              <div id="message-info<%= message.user == current_user ? "my" : "message" %>">
-                <small>
-                  <strong><%= user.name %></strong>
-                  <i><%= message.created_at.strftime("%a %b %e at %l:%M %p") %></i>
-                </small>
-              </div>
-              <div id="message-<%= message.user == current_user ? "my" : "message" %>">
-                <% if message.user == current_user %>
-                    <p><%= message.content %></p>
-                    <%= cl_image_tag message.user.photo.key, class:"avatar"%>
-                  <% else %>
-                    <%= cl_image_tag message.user.photo.key, class:"avatar"%>
-                    <p><%= message.content %></p>
-                <% end %>
-              </div>
+             <%= render "messages/message", message: message %>
             <% end %>
           <% end %>
         </div>
         <div class="form_message">
-          <%= simple_form_for [@chatroom, @message],html: {class: "d-flex"} do |f|%>
+          <%= simple_form_for [@chatroom, @message],
+            html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
+          %>
             <%= f.input :content,
               label: false,
               placeholder: "Message",
