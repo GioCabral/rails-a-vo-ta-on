@@ -2,8 +2,8 @@
   background-color: $green-button;
   color: white;
   border-radius: 20px;
-  padding: 65px;
-  width: 390px;
+  // padding: 65px;
+  width: 440px;
   box-shadow: var(--bs-border-color-translucent) 20px 20px 30px;
 
   &:hover{
@@ -18,7 +18,7 @@
   font-weight: bold;
 }
 
-.email, .password {
+.email, .password, .user_cpf, .user_name, .user_role, .user_photo {
   text-align: center;
 }
 .form-inputs{
@@ -26,13 +26,13 @@
   font-family: 'Open Sans', sans-serif;
   font-weight: bold;
 }
-.form-control {
+.form-control, .form-select {
   border-radius: 20px;
   color: #5b5b5b;
   font-size: large;
 }
 
-.btn-login {
+.btn-purple {
   background-color: #553B65;
   border: none;
   padding: 12px;
