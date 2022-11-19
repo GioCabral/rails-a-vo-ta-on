@@ -10,14 +10,15 @@ export default class extends Controller {
       { channel: "ChatroomChannel", id: this.chatroomIdValue },
       { received: data =>  this.#insertMessageAndScrollDown(data) }
     )
+    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
+    console.log(typeof(this.messagesTarget))
     console.log(`Subscribed to the chatroom with the id ${this.chatroomIdValue}.`)
   }
 
   #insertMessageAndScrollDown(data) {
-    data.replace("id='message-my'", "id='message-message'")
+
     this.messagesTarget.insertAdjacentHTML("beforeend", data)
-    this.messagesTarget.scrollTo(0, this.messagesTarget.scrollHeight)
-    console.log(typeof(data))
+    location.reload(true)
   }
 
   resetForm(event) {
