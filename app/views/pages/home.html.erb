@@ -1,5 +1,10 @@
 <% if user_signed_in? && current_user.role == "Avós" %>
   <%= link_to "Tenho problemas", category_index_path  %>
 <% else !user_signed_in? %>
-  <h1>pag padrao</h1>
+  <div class="main-title">
+    <h1>A tecnologia não será mais um problema 😊</h1>
+    <h2>Realize tarefas cotidianas de forma rápida e segura com ajuda de um neto de aluguel</h2>
+    <a href="/users/sign_up" class="nav_login begin">Clique para Começar</a>
+    <%= image_tag "vovo_main.png", class: "vovo-main" %>
+  </div>
 <% end %>

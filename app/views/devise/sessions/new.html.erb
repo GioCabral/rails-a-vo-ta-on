@@ -4,26 +4,28 @@
     <div class="register_content">
 
       <div class="register_title">
-        <h3>Login</h3>
+        <h2>Faça seu login</h2>
       </div>
       <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-inputs">
           <%= f.input :email,
-                      required: false,
+                      label: 'E-mail',
+                      required: true,
                       autofocus: true,
                       input_html: { autocomplete: "email" } %>
           <%= f.input :password,
-                      required: false,
+                      label: 'Senha',
+                      required: true,
                       input_html: { autocomplete: "current-password" } %>
-          <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+          <%= f.input :remember_me, label: 'Lembrar login' , as: :boolean if devise_mapping.rememberable? %>
         </div>
 
         <div class="form-actions">
-          <%= f.button :submit, "Log in", class:"btn btn-primary", id:"all_width" %>
+          <%= f.button :submit, "Log in", class:"btn btn-primary btn-purple", id:"all_width", label:"Entrar" %>
         </div>
       <% end %>
       <hr>
-      <div>
+      <div class="redirect-links">
         <%= render "devise/shared/links" %>
       </div>
     </div>
