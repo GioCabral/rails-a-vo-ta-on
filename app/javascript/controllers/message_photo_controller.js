@@ -1,11 +1,12 @@
 import { Controller } from "@hotwired/stimulus"
 import uploadFilesPreview from "./lib/uploadFilesPreview"
-
-// Connects to data-controller="user-image"
+// Connects to data-controller="message-photo"
 export default class extends Controller {
   connect() {
-    let image = document.querySelector("#user_photo")
+    console.log("Connecting tome")
+    let image = document.querySelector("#message_photos")
     let imagePlace = document.querySelector(".nels")
-    uploadFilesPreview(image, imagePlace, "img_prd")
+    console.log(image)
+    uploadFilesPreview(image, imagePlace, "img_mss")
   }
 }
