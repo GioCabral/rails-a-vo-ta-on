@@ -2,9 +2,9 @@
   <div class="title">
     <h3>Preciso de ajuda com...</h3>
   </div>
-  <div class="row">
+  <div class="row centralize">
     <% @categories.each do |category| %>
-    <div class="col-lg-4 col-md-6 col-sm-12 mt-3" id="center">
+    <div class="col-lg-4 col-md-4 col-sm-6 mt-3" id="center">
       <button class="card-category">
         <%= link_to category_app_index_path(category), class:"stretched-link" do %>
           <p> <%= category.name %></p>
