@@ -3,7 +3,7 @@
   <div class="register justify-content-center">
       <div class="register_content">
         <div class="register_title">
-          <h3>Sign up</h3>
+          <h3>Cadastro</h3>
         </div>
         <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), data: {turbo: false}) do |f| %>
           <%= f.error_notification %>
@@ -11,30 +11,38 @@
           <div class="form-inputs" data-controller="user-image">
 
             <%= f.input :email,
+                        label: 'E-mail',
                         required: true,
                         autofocus: true,
                         input_html: { autocomplete: "email" }%>
             <%= f.input :name,
+                        label: 'Nome',
                         required: true %>
             <%= f.input :cpf,
+                        label: 'CPF',
                         required: true %>
             <%= f.input :role,
+                        label: 'Vovó ou Neto?',
                         required: true, collection: ["Neto", "Avós"] %>
             <%= f.input :password,
+                        label: 'Senha',
                         required: true,
-                        hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                        hint: ("Pelo menos #{@minimum_password_length} carácteres (números e/ou letras)" if @minimum_password_length),
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation,
+                        label: 'Confirmar Senha',
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
 
             <div class="nels"></div>
-            <%= f.input :photo, as: :file %>
+            <%= f.input :photo,
+                        label: 'Escolher Foto',
+                        as: :file %>
 
           </div>
 
           <div class="form-actions">
-            <%= f.button :submit, "Sign up", class:"btn btn-primary", id:"all_width"%>
+            <%= f.button :submit, "Cadastrar", class:"btn btn-primary btn-purple", id:"all_width"%>
 
           </div>
         <% end %>
