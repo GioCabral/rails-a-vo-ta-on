@@ -9,7 +9,6 @@ class ChatroomsController < ApplicationController
   end
 
   def new
-    raise
     @chatroom = Chatroom.new
   end
 
