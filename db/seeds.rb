@@ -5,3 +5,15 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+
+## Category Seed
+Category.create(name: 'Banco')
+Category.create(name: 'Rede Social')
+Category.create(name: 'Televisão')
+Category.create(name: 'Celular')
+Category.create(name: 'Whatsapp')
+Category.create(name: 'Outros')
+
+## Apps
+
+## Issues
