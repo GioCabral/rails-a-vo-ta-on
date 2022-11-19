@@ -1,12 +1,15 @@
 .messages{
-  height: 500px;
+  height: 450px;
   overflow-y:scroll;
+}
+.messages::-webkit-scrollbar {
+  background-color: transparent;
 }
 #message-my{
   display: flex;
   justify-content: flex-end;
   padding: 0 10px 0 0;
-  p{
+  .content_message{
     background-color: white;
     margin: 25px 5px 0 0;
     border: 1px solid white;
@@ -14,13 +17,21 @@
     width: fit-content;
     border-radius: 10px 0 10px 10px;
     color: #340053;
+    p{
+      margin: 0;
+    }
+    img{
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
   }
 }
 #message-message{
   display: flex;
   justify-content: flex-start;
   padding: 0 0 0 10px;
-  p{
+  .content_message{
     background-color: white;
     margin: 25px 0 0 5px;
     border: 1px solid white;
@@ -28,6 +39,14 @@
     width: fit-content;
     border-radius: 0 10px 10px 10px;
     color: #340053;
+    p{
+      margin: 0;
+    }
+    img{
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
   }
 }
 #message-infomy{
@@ -60,8 +79,25 @@
   padding-top: 3px;
   background-color: #340053;
   border-radius: 25px;
+  position: relative;
 }
 .form_message{
   padding: 10px 20px;
   margin: 0;
+}
+.icon_chat{
+  padding-left: 10px;
+  padding-bottom: 10px;
+  font-size: 35px;
+  color: white;
+  align-items: center;
+}
+.icon_chat:hover{
+  cursor: pointer;
+}
+.btn-img{
+  padding-bottom: 15px;
+}
+.d-flex{
+  align-items: center;
 }
