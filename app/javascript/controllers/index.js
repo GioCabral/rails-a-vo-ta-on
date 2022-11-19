@@ -13,5 +13,8 @@ application.register("create-chat", CreateChatController)
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
 
+import MessagePhotoController from "./message_photo_controller"
+application.register("message-photo", MessagePhotoController)
+
 import UserImageController from "./user_image_controller"
 application.register("user-image", UserImageController)

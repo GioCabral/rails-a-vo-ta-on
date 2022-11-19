@@ -1,10 +1,33 @@
 .nels{
+  position: absolute;
+  background:rgba(255,255,255, 0.2);
   display: flex;
   justify-content: center;
+  overflow-x: auto;
+  overflow-y: hidden;
+  max-width: 300px;
+  min-height: 50px;
+  bottom: 80px;
+  right: 20px;
 }
-.img_prd{
-  width: 150px;
-  height: 150px;
+.nels::-webkit-scrollbar {
+  display: none;
+}
+
+.img_mss{
+  padding: 10px;
+  min-width: 100px;
+  height: 100px;
   object-fit: cover;
   border-radius: 10px;
+}
+.img_prd{
+  padding: 10px;
+  min-width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+#upload_pic{
+  display: none;
 }
