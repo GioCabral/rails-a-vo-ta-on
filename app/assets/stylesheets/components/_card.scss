@@ -1,4 +1,5 @@
 .card-category {
+  position: relative;
   background-size: cover;
   background-color: #58BC82;
   background-position: center;
@@ -13,9 +14,11 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  text-decoration: none;
+
   p{
     color: white;
+  }
+  a{
     text-decoration: none;
   }
 }
@@ -43,4 +46,9 @@
 #center{
   display: flex;
   justify-content: center;
+}
+
+.centralize{
+  margin: 0 auto;
+  width: 600px;
 }
