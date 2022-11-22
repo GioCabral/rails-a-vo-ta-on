@@ -11,7 +11,7 @@
               <p>Nada de mensagens</p>
             </div>
           <% else %>
-            <% @chatroom.messages.each do |message| %>
+            <% @chatroom.messages.select {|message| message.content.length > 0 || message.photos.length > 0}.each do |message| %>
              <%= render "messages/message", message: message %>
             <% end %>
           <% end %>

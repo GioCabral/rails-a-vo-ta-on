@@ -19,7 +19,7 @@
                     <div class="content_message">
                       <p><%= message.content %></p>
                       <% message.photos.each do |photo| %>
-                      <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
+                        <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
                       <% end %>
                     </div>
                 <% end %>
