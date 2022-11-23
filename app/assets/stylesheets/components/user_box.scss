@@ -1,0 +1,27 @@
+.user_container{
+  height: 565px;
+  max-width: 300px;
+  background-color: #340053;
+  border-radius: 20px;
+}
+.user_img{
+  display: flex;
+  justify-content: center;
+  img{
+    border-radius: 50px;
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    padding: 20px;
+  }
+
+}
+.user_name{
+  color: white;
+  padding: 0 20px;
+}
+.description{
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
