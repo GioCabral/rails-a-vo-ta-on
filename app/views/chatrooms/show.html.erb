@@ -48,11 +48,11 @@
             <%= cl_image_tag @chatroom.grandchild && @chatroom.grandchild.photo.attached? ? @chatroom.grandchild.photo.key :  ("rvkqkcff2fqbiyoj1vai") %>
           </div>
           <div class="user_name">
-            <h3><%= @chatroom.grandchild.name.capitalize %></h3>
+            <h3><%= @chatroom.grandchild ? @chatroom.grandchild.name.capitalize : "Seu neto está a caminho" %></h3>
           </div>
           <div class="description">
           <h3>Sobre seu Netinho(a):</h3>
-            <h4><%= @chatroom.grandchild.description %></h4>
+            <h4><%= @chatroom.grandchild.description if @chatroom.grandchild %></h4>
           </div>
           <% else %>
           <div class="user_img">
