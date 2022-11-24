@@ -5,8 +5,11 @@
         <button class="card-item-chatroom">
           <div class="item-chatroom">
             <div class="list-container">
-              <div>
-                <h2 class= "title"><%= chatroom.grandparent.name %></h2>
+              <div class="card_idx_header">
+                <h2 class= "title"><%= chatroom.grandparent.name %> </h2>
+                <% if current_user == chatroom.grandchild %>
+                  <span class="my_chat">Meu</span>
+                <% end %>
               </div>
               <p class= "category-name"><%="#{chatroom.category.name}" %></p>
               <p class= "category-app-content"><%="#{chatroom.app.name}" %></p>
