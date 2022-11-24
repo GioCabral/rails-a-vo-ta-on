@@ -13,9 +13,9 @@
                       <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
                       <% end %>
                     </div>
-                    <%= cl_image_tag message.user.photo.key, class:"avatar"%>
+                    <%= cl_image_tag message.user.photo.key, class:"avatar2"%>
                   <% else %>
-                    <%= cl_image_tag message.user.photo.key, class:"avatar"%>
+                    <%= cl_image_tag message.user.photo.key, class:"avatar2"%>
                     <div class="content_message">
                       <p><%= message.content %></p>
                       <% message.photos.each do |photo| %>
