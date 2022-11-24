@@ -31,3 +31,21 @@
   box-shadow: 0 1px 2px rgba(0,0,0,0.2);
   border: white 1px solid;
 }
+.avatar2{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.sm_user_info{
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+}
+.user_img_sm{
+  padding: 10px 10px;
+  img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+}
