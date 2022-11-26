@@ -3,6 +3,7 @@ Chatroom.destroy_all
 Issue.destroy_all
 App.destroy_all
 Category.destroy_all
+User.destroy_all
 
 ## Category Seed
 banco = Category.create!(name: 'Banco')
