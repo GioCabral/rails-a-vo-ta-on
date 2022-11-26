@@ -15,14 +15,14 @@
 
           <% elsif current_user == @chatroom.grandchild %>
               <div class="user_img">
-                <%= cl_image_tag @chatroom.grandparent.photo.key %>
+                <%= cl_image_tag @chatroom.grandparent.photo.key ? @chatroom.grandparent.photo.key : ""  %>
                 <%= @chatroom.grandparent.name.capitalize %>
               </div>
           <% end %>
           </div>
           <% if @chatroom.messages.length < 1 %>
-            <div class="message">
-              <p>Nada de mensagens</p>
+            <div class="no-message-container">
+              <p class="no-message">Aguarde seu netinho por gentileza...</p>
             </div>
           <% else %>
             <% @chatroom.messages.select {|message| message.content.length > 0 || message.photos.length > 0}.each do |message| %>
