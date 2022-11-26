@@ -2,20 +2,27 @@
 <div class="container">
   <div class="row">
     <% @chatrooms.each do |chatroom| %>
-      <div class="col-3">
-        <button class="card-item-chatroom">
+      <div class="col-lg-3 col-md-4 col-sm-12 mt-3">
+        <div class="card-item-chatroom">
           <div class="item-chatroom">
             <div class="list-container">
-              <div>
-                <h2 class= "title"><%= chatroom.grandparent.name %></h2>
+              <div class="card_idx_header">
+                <h2 class= "title"><%= chatroom.grandparent.name %> </h2>
+                <% if current_user == chatroom.grandchild %>
+                  <span class="my_chat">Meu</span>
+                <% end %>
               </div>
-              <p class= "category-name"><%="#{chatroom.category.name}" %></p>
-              <p class= "category-app-content"><%="#{chatroom.app.name}" %></p>
+              <p class= "category-name"><%="#{chatroom.category.name} | #{chatroom.app.name}" %></p>
               <p class= "category-issue"><%="#{chatroom.issue.name}" %></p>
-              <%= link_to "Acesse o chat", join_chat_path(chatroom: chatroom.id), data: { 'turbo-method' => :put } %>
+              <%= link_to  join_chat_path(chatroom: chatroom.id), data: { 'turbo-method' => :put }, class:"btn_chat" do %>
+                <div class="btn_go_chat">
+                  <p>Atender chamado</p>
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              <% end %>
             </div>
           </div>
-        </button>
+        </div>
       </div>
     <% end %>
   </div>
