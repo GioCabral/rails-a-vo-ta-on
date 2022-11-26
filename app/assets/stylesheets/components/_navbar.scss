@@ -68,6 +68,9 @@
   div.avatar_nav{
     display: none;
   }
+  div.user_container{
+    display: none;
+  }
 
 }
 @media screen and (min-width: 600px) {
@@ -75,6 +78,9 @@
     display: none;
   }
   #small_login{
+    display: none;
+  }
+  div.sm_user_info{
     display: none;
   }
 }

@@ -21,6 +21,9 @@
             <%= f.input :cpf,
                         label: 'CPF',
                         required: true %>
+                        <%= f.input :description,
+                        label: 'Descrição',
+                        required: true %>
             <%= f.input :role,
                         label: 'Vovó ou Neto?',
                         required: true, collection: ["Neto", "Avós"] %>
@@ -34,7 +37,7 @@
                         required: true,
                         input_html: { autocomplete: "new-password" } %>
 
-            <div class="nels"></div>
+            <div class="register_pic"></div>
             <%= f.input :photo,
                         label: 'Escolher Foto',
                         as: :file %>

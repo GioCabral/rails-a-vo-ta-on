@@ -1,17 +1,31 @@
 <div class="container">
   <div class="row">
-    <div class="col-6" >
+    <div class="col-lg-6 col-md-6 col-sm-12" >
       <div class="message_container"
       data-controller="chatroom-subscription"
       data-chatroom-subscription-chatroom-id-value="<%= @chatroom.id %>"
       >
         <div class="messages" data-chatroom-subscription-target="messages">
+          <div class="sm_user_info">
+            <% if current_user == @chatroom.grandparent %>
+              <div class="user_img_sm">
+                <%= cl_image_tag @chatroom.grandchild.photo.key if @chatroom.grandchild && @chatroom.grandchild.photo.attached? %>
+                <p><%= @chatroom.grandchild.name.capitalize if @chatroom.grandchild %></p>
+              </div>
+
+          <% elsif current_user == @chatroom.grandchild %>
+              <div class="user_img">
+                <%= cl_image_tag @chatroom.grandparent.photo.key %>
+                <%= @chatroom.grandparent.name.capitalize %>
+              </div>
+          <% end %>
+          </div>
           <% if @chatroom.messages.length < 1 %>
             <div class="message">
               <p>Nada de mensagens</p>
             </div>
           <% else %>
-            <% @chatroom.messages.each do |message| %>
+            <% @chatroom.messages.select {|message| message.content.length > 0 || message.photos.length > 0}.each do |message| %>
              <%= render "messages/message", message: message %>
             <% end %>
           <% end %>
@@ -40,6 +54,32 @@
         </div>
       </div>
     </div>
-    <div class="col-6"></div>
+    <div class="col-lg-6 col-md-6 col-sm-12">
+      <div class="user_container">
+          <% if current_user == @chatroom.grandparent %>
+            <div class="user_img">
+              <%= cl_image_tag @chatroom.grandchild.photo.key if @chatroom.grandchild && @chatroom.grandchild.photo.attached? %>
+            </div>
+            <div class="user_name">
+              <h3><%= @chatroom.grandchild ? @chatroom.grandchild.name.capitalize : "Aguarde alguns instantes, seu neto está a caminho..." %></h3>
+            </div>
+            <div class="description">
+            <h3>Sobre seu Netinho(a):</h3>
+              <h4><%= @chatroom.grandchild.description if @chatroom.grandchild %></h4>
+            </div>
+          <% elsif current_user == @chatroom.grandchild %>
+            <div class="user_img">
+              <%= cl_image_tag @chatroom.grandparent.photo.key %>
+            </div>
+            <div class="user_name">
+              <h3><%= @chatroom.grandparent.name.capitalize %></h3>
+            </div>
+            <div class="description">
+              <h3>Sobre seu Avo/Avó:</h3>
+              <h4><%= @chatroom.grandparent.description %></h4>
+            </div>
+          <% end %>
+      </div>
+    </div>
   </div>
 </div>

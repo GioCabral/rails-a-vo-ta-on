@@ -52,3 +52,99 @@
   margin: 0 auto;
   width: 600px;
 }
+
+.card-item-chatroom {
+  position: relative;
+  background-color: #58BC82;
+  width: 250px;
+  height: 180px;
+  align-content: center;
+  color: white;
+  font-size: 24px;
+  font-weight:lighter;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  p{
+    color: white;
+    text-align: center;
+  }
+
+  h2{
+    font-weight: bold;
+  }
+
+}
+
+.category-name {
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+  font-size: 20px;
+
+}
+
+
+.category-app-content {
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+
+}
+
+
+.category-issue {
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+
+}
+
+.list-container{
+  align-content: center;
+}
+.my_chat{
+  padding: 3px 7px;
+  background-color: #340053;
+  color: white;
+  font-size: 11px;
+  height: min-content;
+  border-radius: 2px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.card_idx_header{
+position: relative;
+}
+.btn_chat{
+margin-top: 16px;
+  display: flex;
+  font-size: 18px;
+  text-decoration: none;
+  justify-content: center;
+  .btn_go_chat{
+    display: flex;
+    justify-content: center;
+    background-color: #340053;
+    padding: 2px 8px;
+    border-radius: 5px;
+    a{
+      width: 100%;
+    }
+    i{
+      padding: 6px 0 0 3px;
+      text-decoration: none;
+      color: white;
+    }
+    p{
+      margin: 0;
+    }
+
+  }
+
+
+}
