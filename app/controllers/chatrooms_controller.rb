@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.where(grandchild: current_user).or(Chatroom.where(grandchild: nil))
+    @chatrooms = Chatroom.where("grandchild_id = ? AND grandchild_id = ?", current_user, nil)
   end
 
   def show
