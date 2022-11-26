@@ -1,9 +1,12 @@
 .user_container{
-  height: 565px;
+  height: min-content;
   max-width: 300px;
   background-color: #340053;
   border-radius: 20px;
+  max-height: 565px;
+  overflow: auto;
 }
+
 .user_img{
   display: flex;
   justify-content: center;
@@ -14,12 +17,13 @@
     object-fit: cover;
     padding: 20px;
   }
-
 }
+
 .user_name{
   color: white;
   padding: 10px 20px;
 }
+
 .description{
   color: white;
   padding: 20px;

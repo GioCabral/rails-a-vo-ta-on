@@ -1,5 +1,5 @@
 class HistoryController < ApplicationController
   def index
-    @chatrooms = Chatroom.where(grandparent: current_user).or(Chatroom.where(close: true))
+    @chatrooms = Chatroom.where("grandparent_id = ? AND close = ?", current_user, true)
   end
 end
