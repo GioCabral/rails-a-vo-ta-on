@@ -34,14 +34,15 @@
           <%= simple_form_for [@chatroom, @message],
             html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
           %>
-            <%= f.input :content,
-              label: false,
-              placeholder: "Message",
-              wrapper_html: {class: "flex-grow-1", id:"form_chat"}
-            %>
+          <% if @chatroom.close == nil %>
+              <%= f.input :content,
+                label: false,
+                placeholder: "Message",
+                wrapper_html: {class: "flex-grow-1", id:"form_chat"}
+              %>
 
-            <div class="nels"></div>
-            <div class="d-flex">
+              <div class="nels"></div>
+              <div class="d-flex">
               <div class="send_btn">
                 <%= f.submit "Send", class: "btn btn-primary mb-3" %>
               </div>
@@ -49,7 +50,8 @@
                 <%= f.input :photos, label: false,id:"upload_pic" ,as: :file, input_html: { multiple: true, class: "input-photo d-none" } %>
                 <label class="icon_chat" for="message_photos"><i class="fa-solid fa-image"></i></label>
               </div>
-            </div>
+              </div>
+            <% end %>
           <% end %>
         </div>
       </div>
