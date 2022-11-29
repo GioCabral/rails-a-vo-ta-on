@@ -80,6 +80,13 @@
               <h4><%= @chatroom.grandparent.description %></h4>
             </div>
           <% end %>
+
+          <%= link_to  close_chat_path(chatroom: @chatroom.id), data: { 'turbo-method' => :put }, class:"btn-close-chat-container" do %>
+            <div class="btn-close-chat">
+              <p>Encerrar chamado</p>
+              <i class="fa-regular fa-thumbs-up"></i>
+            </div>
+          <% end %>
       </div>
     </div>
   </div>

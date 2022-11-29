@@ -12,6 +12,16 @@ class ChatroomsController < ApplicationController
     @chatroom = Chatroom.new
   end
 
+  def close_chat
+    chatroom = params[:chatroom]
+    @chatroom = Chatroom.find(chatroom)
+    if @chatroom.update(close: true)
+      redirect_to root_path
+    else
+      "rubocop para de chorar caralho"
+    end
+  end
+
   def create
     category = Category.find(params[:category])
     issue = Issue.find(params[:issue])
