@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   end
   post "", to: "chatrooms#create", as: :create_chat
   put "", to: "chatrooms#update", as: :join_chat
+  put "/close", to: "chatrooms#close_chat", as: :close_chat
 
   resources :history, only: :index
 end

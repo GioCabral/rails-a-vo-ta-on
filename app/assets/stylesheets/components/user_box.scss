@@ -29,3 +29,21 @@
   padding: 20px;
   text-align: center;
 }
+.btn-close-chat-container{
+  text-decoration: none;
+}
+.btn-close-chat{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: #20c997;
+ p{
+  color: white;
+  padding: 10px 0 0 10px;
+  font-weight: bold;
+ }
+ i{
+  color: white;
+  padding: 12px 0 0 10px;
+ }
+}
