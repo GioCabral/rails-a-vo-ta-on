@@ -1,6 +1,6 @@
 class ChatroomsController < ApplicationController
   def index
-    @chatrooms = Chatroom.where(grandchild: current_user).or(Chatroom.where(grandchild: nil))
+    @chatrooms = Chatroom.where(grandchild_id: nil).or(Chatroom.where(grandchild_id: current_user))
   end
 
   def show
@@ -10,6 +10,16 @@ class ChatroomsController < ApplicationController
 
   def new
     @chatroom = Chatroom.new
+  end
+
+  def close_chat
+    chatroom = params[:chatroom]
+    @chatroom = Chatroom.find(chatroom)
+    if @chatroom.update(close: true)
+      redirect_to root_path
+    else
+      "rubocop para de chorar caralho"
+    end
   end
 
   def create

@@ -12,10 +12,12 @@ Rails.application.routes.draw do
     end
   end
 
-
   resources :chatrooms, only: %i[show new index] do
     resources :messages, only: :create
   end
   post "", to: "chatrooms#create", as: :create_chat
   put "", to: "chatrooms#update", as: :join_chat
+  put "/close", to: "chatrooms#close_chat", as: :close_chat
+
+  resources :history, only: :index
 end
