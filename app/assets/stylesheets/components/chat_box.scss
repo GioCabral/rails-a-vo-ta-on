@@ -76,14 +76,14 @@
   }
 }
 .message-container{
-  padding: 5px 10px;
+  padding: 0px 10px;
   background-color: #340053;
   border-radius: 25px;
   position: relative;
   width: 50%;
 }
 .form_message{
-  padding: 0px 20px;
+  padding: 5px 20px;
   margin: 0;
 }
 .icon_chat{
@@ -116,6 +116,7 @@
 
 .message-container, .user-container {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 5px 15px;
+  opacity: 0.9;
 }
 
 .send{
