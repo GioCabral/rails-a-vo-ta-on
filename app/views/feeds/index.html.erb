@@ -1,0 +1,13 @@
+<%= simple_form_for @new_feed do |f| %>
+  <%= f.input :content, label: 'O que você está pensando?', error: 'Username is mandatory, please specify one' %>
+
+  <%= f.button :submit %>
+<% end %>
+
+<% @feed.each do |feed| %>
+<h1><%= feed.user.name %></h1>
+  <h1><%= feed.content %></h1>
+  <%= link_to "Delete",
+     bookmark_path(bookmark),
+     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-primary"%>
+<% end %>

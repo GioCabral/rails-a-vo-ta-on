@@ -11,6 +11,11 @@ Rails.application.routes.draw do
       resources :issues, only: :index
     end
   end
+  resources :feeds, only: %i[create new index destroy] do
+    collection do
+      post 'create_from_index'
+    end
+  end
 
   resources :chatrooms, only: %i[show new index] do
     resources :messages, only: :create
