@@ -35,6 +35,7 @@
             html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
           %>
           <% if @chatroom.close == nil %>
+          <%= f.collection_radio_buttons :rating, [[1, '1'] ,[2, '2'],[3, '3'],[4, '4'],[5, '5']], :first, :last %>
               <%= f.input :content,
                 label: false,
                 placeholder: "Message",
@@ -62,7 +63,16 @@
               <%= cl_image_tag @chatroom.grandchild.photo.key if @chatroom.grandchild && @chatroom.grandchild.photo.attached? %>
             </div>
             <div class="user_name">
-              <h3><%= @chatroom.grandchild ? @chatroom.grandchild.name.capitalize : "Aguarde alguns instantes, seu neto está a caminho..." %></h3>
+              <h3><%= @chatroom.grandchild ? @chatroom.grandchild.name.capitalize : "Seu neto está a caminho..." %></h3>
+
+
+              <div class="rating">
+                <a>⭐</a>
+                <a>⭐</a>
+                <a>⭐</a>
+                <a>⭐</a>
+                <a>⭐</a>
+              </div>
             </div>
             <div class="description">
             <h3>Sobre seu Netinho(a):</h3>

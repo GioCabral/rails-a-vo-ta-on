@@ -47,3 +47,20 @@
   padding: 12px 0 0 10px;
  }
 }
+
+.rating a {
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.rating:hover a {
+  opacity: 100%;
+}
+
+.rating a:hover {
+  opacity: 100%;
+}
+
+.rating a:hover ~ a {
+  opacity: 50%;
+}
