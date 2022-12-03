@@ -1,0 +1,49 @@
+.container-feed {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+}
+
+.feed_content {
+  width: 100%;
+}
+
+.container-feed-box {
+  display: flex;
+  align-items: center;
+  padding-left: 0;
+}
+
+.icon_feed {
+  padding: 0 10px;
+}
+
+.feed {
+  display: flex;
+  flex-direction: column;
+  color: #FFBBF4
+}
+
+.feed_user_info {
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+}
+
+.user_img_feed {
+  padding-left: 0;
+}
+
+.feed_post {
+  border-bottom: 1px white solid;
+}
+
+.user_feed_img {
+  padding: 10px;
+  img {
+    max-width: 400px;
+    max-height: 420px;
+    object-fit: cover;
+    padding-bottom: 10px;
+  }
+}

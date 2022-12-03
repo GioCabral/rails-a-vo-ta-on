@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many  :grandchild_chatrooms, :foreign_key => "grandchild_id", :class_name => "chatrooms"
   has_many  :grandparent_billings, :foreign_key => "grandparent_id", :class_name => "billings"
   has_many  :grandchild_billings, :foreign_key => "grandchild_id", :class_name => "billings"
+  has_many :feeds
 
   validates :name, :cpf, presence: true
 end

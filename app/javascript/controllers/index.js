@@ -18,3 +18,6 @@ application.register("message-photo", MessagePhotoController)
 
 import UserImageController from "./user_image_controller"
 application.register("user-image", UserImageController)
+
+import FeedPhotoController from "./feed_photo_controller"
+application.register("feed-photo", FeedPhotoController)
