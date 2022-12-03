@@ -50,3 +50,18 @@
   opacity: 0.9;
  }
 }
+.btn-cancel-chat{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  background-color: red;
+ p{
+  color: white;
+  padding: 10px 0 0 10px;
+  font-weight: bold;
+ }
+ i{
+  color: white;
+  padding: 12px 0 0 10px;
+ }
+}
