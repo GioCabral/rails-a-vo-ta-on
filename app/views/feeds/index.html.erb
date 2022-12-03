@@ -27,7 +27,7 @@
       <div style="font-weight: bold"><%= feed.user.name %></div>
     </div>
     <div class="feed_post">
-      <%= feed.content %>
+      <div style="padding-left: 10px"><%= feed.content %></div>
       <div class="user_feed_img"> <%= cl_image_tag feed.photo.key if feed.photo.attached? %></div>
     </div>
     <% end %>
