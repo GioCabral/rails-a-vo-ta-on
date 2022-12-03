@@ -12,10 +12,11 @@ module RailsAVoTaOn
       generate.assets false
       generate.helper false
       generate.test_framework :test_unit, fixture: false
+      config.active_job.queue_adapter = :sidekiq
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-
+    config.hosts << "3614-2804-18-18f3-5b43-cc33-b695-628f-1d6f.sa.ngrok.io"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

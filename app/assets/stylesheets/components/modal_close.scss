@@ -1,0 +1,46 @@
+.modal{
+  --bs-modal-padding: 0.5rem;
+}
+
+.modal-content{
+  background-color: #20c997;
+  border-radius: 20px;
+}
+
+.modal-title{
+  color: white;
+  font-weight: bold;
+}
+
+.modal-header{
+  border-bottom: none;
+}
+
+.modal-footer{
+  padding: calc(var(--bs-modal-padding) - var(--bs-modal-footer-gap) * 0.5);
+  padding-bottom: 1em;
+  justify-content: center;
+  border-top: none;
+}
+
+#btn_pay{
+  background-color: #511a73;
+}
+
+#btn_back{
+  background-color: #340053;
+}
+
+#btn_pay, #btn_back {
+  text-decoration: none;
+  color: white;
+  border-radius: 10px;
+  font-weight: bold;
+  padding: 10px 20px;
+  &:hover{
+    opacity: 0.9;
+  }
+}
+.x-button{
+  color: white;
+}
