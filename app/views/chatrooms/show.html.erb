@@ -34,13 +34,16 @@
       <% if @chatroom.close == nil %>
           <%= f.input :content,
             label: false,
-            placeholder: "Message",
+            placeholder: "Digite sua mensagem aqui",
             wrapper_html: {class: "flex-grow-1", id:"form_chat"}
           %>
           <div class="nels"></div>
           <div class="d-flex">
           <div class="send_btn">
-            <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+            <%# <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+            <%= button_tag(type: 'submit', class: "btn mb-3 send") do %>
+              <i class="fa-solid fa-paper-plane"></i>
+            <% end %>
           </div>
           <div class="btn-img">
             <%= f.input :photos, label: false,id:"upload_pic" ,as: :file, input_html: { multiple: true, class: "input-photo d-none" } %>
@@ -51,8 +54,8 @@
       <% end %>
     </div>
   </div>
-    <div class="col-lg-6 col-md-6 col-sm-12">
-      <div class="user_container">
+    <div class="col-lg-4 col-md-6 col-sm-10 grandchild-container">
+      <div class="user-container">
           <% if current_user == @chatroom.grandparent %>
             <div class="user_img">
               <%= cl_image_tag @chatroom.grandchild.photo.key if @chatroom.grandchild && @chatroom.grandchild.photo.attached? %>
@@ -83,10 +86,10 @@
               <% end %>
             <% end %>
             <% if @chatroom.grandparent == current_user && @chatroom.close.nil? %>
-              <div class="btn-close-chat" data-bs-toggle="modal" data-bs-target="#exampleModal">
+              <button class="btn-close-chat" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <p>Encerrar chamado</p>
                 <i class="fa-regular fa-thumbs-up"></i>
-              </div>
+              </button>
             <% end %>
       </div>
     </div>
@@ -123,76 +126,6 @@
       <div class="modal-footer">
         <p type="button" id="btn_pay" data-bs-dismiss="modal">Voltar ao chamado</p>
       </div>
-      <% if @chatroom.messages.length < 1 %>
-        <div class="no-message-container">
-          <p class="no-message">Aguarde seu netinho por gentileza...</p>
-        </div>
-      <% else %>
-        <% @chatroom.messages.select {|message| message.content.length > 0 || message.photos.length > 0}.each do |message| %>
-         <%= render "messages/message", message: message %>
-        <% end %>
-      <% end %>
-    </div>
-    <div class="form_message" data-controller="message-photo">
-      <%= simple_form_for [@chatroom, @message],
-        html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
-      %>
-      <% if @chatroom.close == nil %>
-          <%= f.input :content,
-            label: false,
-            placeholder: "Digite sua mensagem aqui",
-            wrapper_html: {class: "flex-grow-1", id:"form_chat"}
-          %>
-          <div class="nels"></div>
-          <div class="d-flex">
-          <div class="send_btn">
-            <%# <%= f.submit "", wrapper_html: { class: 'fa-solid fa-paper-plane-top' }, class: "btn btn-primary mb-3" %>
-            <%= button_tag(type: 'submit', class: "btn mb-3 send") do %>
-              <i class="fa-solid fa-paper-plane"></i>
-            <% end %>
-          </div>
-          <div class="btn-img">
-            <%= f.input :photos, label: false,id:"upload_pic" ,as: :file, input_html: { multiple: true, class: "input-photo d-none" } %>
-            <label class="icon_chat" for="message_photos"><i class="fa-solid fa-image"></i></label>
-          </div>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
-  <div class="col-lg-4 col-md-6 col-sm-10 grandchild-container">
-    <div class="user-container">
-        <% if current_user == @chatroom.grandparent %>
-          <div class="user_img">
-            <%= cl_image_tag @chatroom.grandchild.photo.key if @chatroom.grandchild && @chatroom.grandchild.photo.attached? %>
-          </div>
-          <div class="user_name">
-            <h3><%= @chatroom.grandchild ? @chatroom.grandchild.name.capitalize : "Aguarde alguns instantes, seu neto está a caminho..." %></h3>
-          </div>
-          <div class="description">
-          <h3>Sobre seu Netinho(a):</h3>
-            <p><%= @chatroom.grandchild.description if @chatroom.grandchild %></p>
-            <p><%= "Um cara maneiro pa legal de daora" if @chatroom.grandchild.description == nil %></p>
-          </div>
-        <% elsif current_user == @chatroom.grandchild %>
-          <div class="user_img">
-            <%= cl_image_tag @chatroom.grandparent.photo.key %>
-          </div>
-          <div class="user_name">
-            <h3><%= @chatroom.grandparent.name.capitalize %></h3>
-          </div>
-          <div class="description">
-            <h3>Sobre seu Avo/Avó:</h3>
-            <h4><%= @chatroom.grandparent.description %></h4>
-          </div>
-        <% end %>
-
-        <%= link_to  close_chat_path(chatroom: @chatroom.id), data: { 'turbo-method' => :put }, class:"btn-close-chat-container" do %>
-          <div class="btn-close-chat">
-            <p>Encerrar chamado</p>
-            <i class="fa-regular fa-thumbs-up"></i>
-          </div>
-        <% end %>
     </div>
   </div>
 </div>
