@@ -1,13 +1,18 @@
-<%= simple_form_for @new_feed do |f| %>
-  <%= f.input :content, label: 'O que você está pensando?', error: 'Username is mandatory, please specify one' %>
+<div class="container" data-controller="feed-photo">
+  <%= simple_form_for @new_feed do |f| %>
+  <div class="nels"></div>
+    <%= f.input :content, placeholder: 'No que você está pensando?', label: false %>
+      <div class="btn-img d-flex">
+        <%= f.input :photo, label: false, as: :file, input_html: { id: "upload_pic", class: "input-photo d-none" } %>
+        <label class="icon_chat" for="upload_pic"><i class="fa-solid fa-image"></i></label>
+      </div>
+    <%= f.button :submit, "Enviar" %>
+  <% end %>
 
-  <%= f.button :submit %>
-<% end %>
-
-<% @feed.each do |feed| %>
-<h1><%= feed.user.name %></h1>
-  <h1><%= feed.content %></h1>
-  <%= link_to "Delete",
-     bookmark_path(bookmark),
-     data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}, class:"btn btn-primary"%>
-<% end %>
+  <div class="feed">
+    <% @feed.each do |feed| %>
+    <h2><%= feed.user.name %></h2>
+      <h4><%= feed.content %></h4>
+    <% end %>
+  </div>
+</div>
