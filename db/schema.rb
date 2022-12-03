@@ -80,7 +80,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_141757) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "app_id", null: false
-    t.integer "rating"
     t.index ["app_id"], name: "index_chatrooms_on_app_id"
     t.index ["category_id"], name: "index_chatrooms_on_category_id"
     t.index ["issue_id"], name: "index_chatrooms_on_issue_id"
