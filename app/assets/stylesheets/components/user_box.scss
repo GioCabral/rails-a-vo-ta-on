@@ -1,4 +1,4 @@
-.user_container{
+.user-container{
   height: min-content;
   max-width: 300px;
   background-color: #340053;
@@ -45,6 +45,9 @@
  i{
   color: white;
   padding: 12px 0 0 10px;
+ }
+ &:hover{
+  opacity: 0.9;
  }
 }
 .btn-cancel-chat{
