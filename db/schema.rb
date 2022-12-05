@@ -85,6 +85,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_141757) do
     t.index ["issue_id"], name: "index_chatrooms_on_issue_id"
   end
 
+  create_table "feeds", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_feeds_on_user_id"
+  end
+
   create_table "issues", force: :cascade do |t|
     t.string "name"
     t.bigint "category_id", null: false
@@ -136,6 +144,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_141757) do
   add_foreign_key "chatrooms", "apps"
   add_foreign_key "chatrooms", "categories"
   add_foreign_key "chatrooms", "issues"
+  add_foreign_key "feeds", "users"
   add_foreign_key "issues", "categories"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"
