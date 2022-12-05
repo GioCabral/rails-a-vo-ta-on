@@ -16,7 +16,7 @@ module RailsAVoTaOn
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.hosts << "3614-2804-18-18f3-5b43-cc33-b695-628f-1d6f.sa.ngrok.io"
+    config.hosts << "bef4-200-53-217-195.sa.ngrok.io"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

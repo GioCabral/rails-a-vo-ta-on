@@ -5,4 +5,8 @@ class BillingsController < ApplicationController
     payment_id = params[:data][:id]
     ProcessPaymentsJob.perform_later(payment_id)
   end
+
+  def index
+    @billings = Billing.where(grandparent: current_user).or(Billing.where(grandchild: current_user))
+  end
 end

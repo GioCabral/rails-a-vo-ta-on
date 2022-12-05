@@ -1,0 +1,33 @@
+
+<div class="container-fluid">
+  <div class="row">
+  <div class="col-1">nsei</div>
+  <div class="col-2">status</div>
+  <div class="col-3">Metodo</div>
+  <div class="col-3">Total</div>
+  <div class="col-3"><%= current_user.role == "Neto" ? "Recebendo de:" : "Pagando: " %></div>
+  </div>
+  <% @billings.each_with_index do |billing, idx| %>
+    <% if current_user.role == "Neto"  %>
+      <% usr = User.find(billing.grandparent_id) if billing.grandparent_id != nil %>
+    <% else %>
+      <% usr = User.find(billing.grandchild_id) if billing.grandchild_id != nil %>
+    <% end %>
+    <div class="row" id="<%= idx % 2 == 0 ? "zebra0" : "zebra1" %>" >
+    <hr>
+    <div class="col-1" ><p class="data_table_content" ><%= idx + 1 %></p></div>
+      <div class="col-2">
+        <p class="data_table_content" > <%= billing.status == "approved" ? "Aprovado" : "Cancelado" %></p>
+      </div>
+      <div class="col-3">
+        <p class="data_table_content"><%= billing.payment_method %></p>
+      </div>
+      <div class="col-3">
+        <p class="data_table_content">R$ <%= billing.total %></p>
+      </div>
+      <div class="col-3">
+        <p class="data_table_content"><%= usr ? usr.name.capitalize : "Ninguem" %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
