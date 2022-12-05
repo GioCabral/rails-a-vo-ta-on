@@ -27,4 +27,5 @@ Rails.application.routes.draw do
   resources :history, only: :index
 
   post "/receive", to: "billings#receive", as: :receive
+  resources :billings, only: :index
 end
