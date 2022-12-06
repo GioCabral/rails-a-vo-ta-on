@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_23_002803) do
+ActiveRecord::Schema[7.0].define(version: 2022_12_03_141757) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -50,6 +50,19 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_002803) do
     t.index ["category_id"], name: "index_apps_on_category_id"
   end
 
+  create_table "billings", force: :cascade do |t|
+    t.string "status"
+    t.string "title"
+    t.float "total"
+    t.string "payment_method"
+    t.integer "grandchild_id"
+    t.integer "grandparent_id"
+    t.string "grandchild_type"
+    t.string "grandparent_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "categories", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
@@ -70,6 +83,14 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_002803) do
     t.index ["app_id"], name: "index_chatrooms_on_app_id"
     t.index ["category_id"], name: "index_chatrooms_on_category_id"
     t.index ["issue_id"], name: "index_chatrooms_on_issue_id"
+  end
+
+  create_table "feeds", force: :cascade do |t|
+    t.string "content"
+    t.bigint "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_feeds_on_user_id"
   end
 
   create_table "issues", force: :cascade do |t|
@@ -112,6 +133,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_002803) do
     t.string "cpf"
     t.string "role"
     t.text "description"
+    t.boolean "admin", default: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
@@ -122,6 +144,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_23_002803) do
   add_foreign_key "chatrooms", "apps"
   add_foreign_key "chatrooms", "categories"
   add_foreign_key "chatrooms", "issues"
+  add_foreign_key "feeds", "users"
   add_foreign_key "issues", "categories"
   add_foreign_key "messages", "chatrooms"
   add_foreign_key "messages", "users"

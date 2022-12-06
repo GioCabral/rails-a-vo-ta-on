@@ -1,0 +1,35 @@
+<div class="container container-feed" data-controller="feed-photo">
+  <%= simple_form_for @new_feed do |f| %>
+    <div class="preview_photo_feed"></div>
+    <div class="container container-feed-box">
+      <%= f.input :content, placeholder: 'No que você está pensando?', label: false %>
+      <div class="btn-img d-flex">
+        <%= f.input :photo, label: false, as: :file, input_html: { id: "upload_pic", class: "input-photo d-none" } %>
+        <label class="icon_chat icon_feed" for="upload_pic"><i class="fa-solid fa-image"></i></label>
+      </div>
+      <div class="send_btn">
+        <%# <%= f.submit "Send", class: "btn btn-primary mb-3" %>
+        <%= button_tag(type: 'submit', class: "btn mb-3 send") do %>
+          <i class="fa-solid fa-paper-plane"></i>
+        <% end %>
+      </div>
+    <%# <%= f.button :submit, "Enviar" %>
+      <% end %>
+    </div>
+
+
+  <div class="feed">
+    <% @feed.reverse.each do |feed| %>
+    <div class="feed_user_info">
+      <div class="user_img_sm user_img_feed">
+        <%= cl_image_tag current_user.photo.key %>
+      </div>
+      <div style="font-weight: bold"><%= feed.user.name %></div>
+    </div>
+    <div class="feed_post">
+      <div style="padding-left: 10px"><%= feed.content %></div>
+      <div class="user_feed_img"> <%= cl_image_tag feed.photo.key if feed.photo.attached? %></div>
+    </div>
+    <% end %>
+  </div>
+</div>
