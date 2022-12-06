@@ -14,12 +14,22 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-style: none;
 
   p{
-    color: white;
+    color: rgb(255, 255, 255);
   }
   a{
     text-decoration: none;
+    z-index: 1;
+  }
+
+  &:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4s;
+    transform: translateY(-0.3rem);
+    opacity: 0.9;
+    background-color: #FFBBF4;
   }
 }
 .card-category-long {
@@ -38,9 +48,22 @@
   border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   text-decoration: none;
+  border-style: none;
   p{
     color: white;
     text-decoration: none;
+  }
+  a{
+    text-decoration: none;
+    z-index: 1;
+  }
+
+  &:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4s;
+    transform: translateY(-0.3rem);
+    opacity: 0.9;
+    background-color: #FFBBF4;
   }
 }
 #center{
