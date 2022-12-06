@@ -49,8 +49,10 @@
  }
  &:hover{
   opacity: 0.9;
+  transition: 0.5s;
  }
 }
+
 .btn-cancel-chat{
   display: flex;
   justify-content: center;
@@ -65,5 +67,9 @@
  i{
   color: white;
   padding: 14px 0 0 10px;
+ }
+ &:hover{
+  opacity: 0.9;
+  transition: 0.5s;
  }
 }
