@@ -1,7 +1,7 @@
 class ChatroomsController < ApplicationController
   require 'mercadopago'
   def index
-    @chatrooms = Chatroom.where(grandchild_id: nil).or(Chatroom.where(grandchild_id: current_user))
+    @chatrooms = Chatroom.where("close <> ? AND grandchild_id IN (?, ?)", true, 0, current_user.id)
   end
 
   def show
@@ -26,9 +26,9 @@ class ChatroomsController < ApplicationController
         }
       },
       back_urls: {
-        success: "https://bef4-200-53-217-195.sa.ngrok.io/close?chatroom=#{@chatroom.id}",
-        failure: "https://bef4-200-53-217-195.sa.ngrok.io",
-        pending: "https://bef4-200-53-217-195.sa.ngrok.io"
+        success: "https://90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io/close?chatroom=#{@chatroom.id}",
+        failure: "https://90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io/",
+        pending: "https://90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io/"
       },
       auto_return: 'approved'
     }
