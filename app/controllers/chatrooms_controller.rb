@@ -26,9 +26,9 @@ class ChatroomsController < ApplicationController
         }
       },
       back_urls: {
-        success: "https://90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io/close?chatroom=#{@chatroom.id}",
-        failure: "https://90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io/",
-        pending: "https://90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io/"
+        success: "https://avotaon.herokuapp.com/close?chatroom=#{@chatroom.id}",
+        failure: "https://avotaon.herokuapp.com",
+        pending: "https://avotaon.herokuapp.com"
       },
       auto_return: 'approved'
     }

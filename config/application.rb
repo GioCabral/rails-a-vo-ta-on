@@ -16,7 +16,7 @@ module RailsAVoTaOn
     end
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
-    config.hosts << "90df-2804-2448-8094-e600-d55-db0b-34a4-b4b5.sa.ngrok.io"
+    config.hosts << "https://avotaon.herokuapp.com"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
