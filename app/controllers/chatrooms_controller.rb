@@ -26,9 +26,9 @@ class ChatroomsController < ApplicationController
         }
       },
       back_urls: {
-        success: "https://3614-2804-18-18f3-5b43-cc33-b695-628f-1d6f.sa.ngrok.io/close?chatroom=#{@chatroom.id}",
-        failure: "https://3614-2804-18-18f3-5b43-cc33-b695-628f-1d6f.sa.ngrok.io",
-        pending: "https://3614-2804-18-18f3-5b43-cc33-b695-628f-1d6f.sa.ngrok.io"
+        success: "https://bef4-200-53-217-195.sa.ngrok.io/close?chatroom=#{@chatroom.id}",
+        failure: "https://bef4-200-53-217-195.sa.ngrok.io",
+        pending: "https://bef4-200-53-217-195.sa.ngrok.io"
       },
       auto_return: 'approved'
     }
