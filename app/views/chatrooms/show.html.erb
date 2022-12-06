@@ -31,7 +31,7 @@
       <%= simple_form_for [@chatroom, @message],
         html: { data: { action: "turbo:submit-end->chatroom-subscription#resetForm" }, class: "d-flex" } do |f|
       %>
-      <% if @chatroom.close == nil %>
+      <% if @chatroom.close == false %>
           <%= f.input :content,
             label: false,
             placeholder: "Digite sua mensagem aqui",
@@ -54,6 +54,7 @@
       <% end %>
     </div>
   </div>
+  <% if @chatroom.close == false %>
     <div class="col-lg-4 col-md-6 col-sm-10 grandchild-container">
       <div class="user-container">
           <% if current_user == @chatroom.grandparent %>
@@ -79,13 +80,13 @@
               <h4><%= @chatroom.grandparent.description %></h4>
             </div>
           <% end %>
-            <% if @chatroom.grandchild.nil? %>
+            <% if @chatroom.grandchild_id == 0 %>
               <%= link_to close_chat_path(chatroom: @chatroom.id), class:"btn-cancel-chat" do %>
                 <p>Cancelar</p>
                 <i class="fa-solid fa-xmark"></i>
               <% end %>
             <% end %>
-            <% if @chatroom.grandparent == current_user && @chatroom.close.nil? %>
+            <% if @chatroom.grandparent == current_user && @chatroom.close == false && !@chatroom.grandchild == false%>
               <button class="btn-close-chat" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 <p>Encerrar chamado</p>
                 <i class="fa-regular fa-thumbs-up"></i>
@@ -93,6 +94,7 @@
             <% end %>
       </div>
     </div>
+  <% end %>
   </div>
 </div>
 <div id="cho-container"></div>

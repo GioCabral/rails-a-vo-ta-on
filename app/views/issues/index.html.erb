@@ -7,11 +7,11 @@
     <div class="col-4 mt-3" id="center" data-controller="create-chat">
     </div>
     <div class="col-4 mt-3" id="center">
-      <div class="card-category-long">
+      <button class="card-category-long">
         <%= link_to create_chat_path(issue: issue.id, category: issue.category.id, app: params[:app_id]), data: { 'turbo-method' => :post } do %>
           <p><%= issue.name %></p>
         <% end %>
-      </div>
+      </button>
 
     </div>
     <div class="col-4 mt-3" id="center">
