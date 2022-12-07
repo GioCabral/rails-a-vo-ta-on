@@ -17,19 +17,13 @@
           </li>
           <% end %>
           <li class="nav-item active">
-            <%= link_to "Como funciona", "#", class: "nav-link" %>
+            <%= link_to "Como funciona", about_path, class: "nav-link" %>
           </li>
           <div class="bar_separate">
               <p>|</p>
           </div>
           <li class="nav-item">
-            <%= link_to "Planos", "#", class: "nav-link" %>
-          </li>
-          <div class="bar_separate">
-              <p>|</p>
-          </div>
-          <li class="nav-item">
-            <%= link_to "Contato", "#", class: "nav-link" %>
+            <%= link_to "Contato", contact_path, class: "nav-link" %>
           </li>
           <% if user_signed_in? %>
           <li class="nav-item" id="avatar_migrate">

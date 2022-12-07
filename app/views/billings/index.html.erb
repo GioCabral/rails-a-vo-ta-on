@@ -1,11 +1,11 @@
 
-<div class="container-fluid">
-  <div class="row">
-  <div class="col-1">nsei</div>
-  <div class="col-2">status</div>
-  <div class="col-3">Metodo</div>
+<div class="container">
+  <div class="row table-style">
+  <div class="col-1">Nº</div>
+  <div class="col-2">Status</div>
+  <div class="col-3">Método</div>
   <div class="col-3">Total</div>
-  <div class="col-3"><%= current_user.role == "Neto" ? "Recebendo de:" : "Pagando: " %></div>
+  <div class="col-3"><%= current_user.role == "Neto" ? "Recebendo de" : "Pagando de" %></div>
   </div>
   <% @billings.each_with_index do |billing, idx| %>
     <% if current_user.role == "Neto"  %>
