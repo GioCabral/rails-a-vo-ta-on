@@ -1,6 +1,7 @@
 class ChatroomsController < ApplicationController
   require 'mercadopago'
   def index
+    redirect_to root_path if current_user.role != 'Neto'
     @chatrooms = Chatroom.where("close <> ? AND grandchild_id IN (?, ?)", true, 0, current_user.id)
   end
 
