@@ -95,6 +95,15 @@
 
   h2{
     font-weight: bold;
+    padding: 10px 20px;
+    text-align: center;
+  }
+  &:hover{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transition: 0.4s;
+    transform: translateY(-0.3rem);
+    opacity: 0.9;
+    background-color: #FFBBF4;
   }
 
 }
@@ -144,17 +153,19 @@
 position: relative;
 }
 .btn_chat{
-margin-top: 16px;
   display: flex;
+  margin: 5px;
   font-size: 18px;
   text-decoration: none;
   justify-content: center;
+
   .btn_go_chat{
     display: flex;
     justify-content: center;
     background-color: #340053;
     padding: 2px 8px;
     border-radius: 5px;
+
     a{
       width: 100%;
     }
@@ -166,7 +177,6 @@ margin-top: 16px;
     p{
       margin: 0;
     }
-
   }
 
 
