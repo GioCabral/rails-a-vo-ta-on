@@ -7,7 +7,7 @@ class ChatroomsController < ApplicationController
   def show
     @chatroom = Chatroom.find(params[:id])
     @message = Message.new
-    sdk = Mercadopago::SDK.new('TEST-6411651370055655-122014-9f896bf26ff35b2932cf5c896bfb39c8-174234657')
+    sdk = Mercadopago::SDK.new('APP_USR-6411651370055655-122014-9c0ec1614eed030298cf5af3bb629873-174234657')
     preference_data = {
       items: [
         {
