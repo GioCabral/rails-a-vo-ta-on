@@ -6,12 +6,12 @@ Category.destroy_all
 User.destroy_all
 
 ## Category Seed
-Category.create!(name: 'Banco')
-Category.create!(name: 'Rede Social')
-Category.create!(name: 'Televisão')
-Category.create!(name: 'Celular')
-Category.create!(name: 'Whatsapp')
-Category.create!(name: 'Outros')
+banco = Category.create!(name: 'Banco')
+rs = Category.create!(name: 'Rede Social')
+tv = Category.create!(name: 'Televisão')
+cel = Category.create!(name: 'Celular')
+wpp = Category.create!(name: 'Whatsapp')
+ot = Category.create!(name: 'Outros')
 
 ## Apps
 App.create!(name: 'Itaú', category: banco)
