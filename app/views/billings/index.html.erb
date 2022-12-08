@@ -5,7 +5,7 @@
   <div class="col-2">Status</div>
   <div class="col-3">Método</div>
   <div class="col-3">Total</div>
-  <div class="col-3"><%= current_user.role == "Neto" ? "Recebendo de" : "Pagando de" %></div>
+  <div class="col-3"><%= current_user.role == "Neto" ? "Recebendo de" : "Pagando" %></div>
   </div>
   <% @billings.each_with_index do |billing, idx| %>
     <% if current_user.role == "Neto"  %>
