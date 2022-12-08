@@ -46,7 +46,7 @@ gem "bootsnap", require: false
 gem "mercadopago-sdk"
 gem "cloudinary"
 
-gem "sidekiq"
+gem "sidekiq", "~> 6.0"
 gem "sidekiq-failures", "~> 1.0"
 
 # Use Sass to process CSS
