@@ -8,6 +8,9 @@
       <button class="card-category">
         <%= link_to category_app_index_path(category), class:"stretched-link" do %>
           <p> <%= category.name %></p>
+          <span style="color:#511a73">
+          <%= sanitize category.icon %>
+          </span>
         <% end %>
       </button>
     </div>

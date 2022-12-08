@@ -6,12 +6,12 @@ Category.destroy_all
 User.destroy_all
 
 ## Category Seed
-banco = Category.create!(name: 'Banco')
-rs = Category.create!(name: 'Rede Social')
-tv = Category.create!(name: 'Televisão')
-cel = Category.create!(name: 'Celular')
-wpp = Category.create!(name: 'Whatsapp')
-ot = Category.create!(name: 'Outros')
+banco = Category.create!(name: 'Banco', icon: '<i class="fa-sharp fa-solid fa-building-columns"></i>')
+rs = Category.create!(name: 'Rede Social', icon: '<i class="fa-sharp fa-solid fa-thumbs-up"></i>')
+tv = Category.create!(name: 'Televisão', icon: '<i class="fa-solid fa-tv"></i>')
+cel = Category.create!(name: 'Celular', icon: '<i class="fa-solid fa-mobile-retro"></i>')
+wpp = Category.create!(name: 'Whatsapp', icon: '<i class="fa-brands fa-whatsapp"></i>')
+ot = Category.create!(name: 'Outros', icon: '<i class="fa-solid fa-arrows-left-right"></i>')
 
 ## Apps
 App.create!(name: 'Itaú', category: banco)
