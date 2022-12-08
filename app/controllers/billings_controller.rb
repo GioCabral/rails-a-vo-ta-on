@@ -4,7 +4,7 @@ class BillingsController < ApplicationController
   skip_before_action :authenticate_user!
   def receive
     payment_id = params[:data][:id]
-    ProcessPaymentsJob.perform_later(payment_id)
+    ProcessPaymentsJob.perform_now(payment_id)
   end
 
   def index
