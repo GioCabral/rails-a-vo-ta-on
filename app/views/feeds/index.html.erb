@@ -2,7 +2,7 @@
   <%= simple_form_for @new_feed do |f| %>
     <div class="preview_photo_feed"></div>
     <div class="container container-feed-box">
-      <%= f.input :content, placeholder: 'No que você está pensando?', label: false %>
+      <%= f.input :content, placeholder: 'Deixe aqui seu bom dia ☀️', label: false %>
       <div class="btn-img d-flex">
         <%= f.input :photo, label: false, as: :file, input_html: { id: "upload_pic", class: "input-photo d-none" } %>
         <label class="icon_chat icon_feed" for="upload_pic"><i class="fa-solid fa-image"></i></label>

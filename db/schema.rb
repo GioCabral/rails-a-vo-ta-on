@@ -70,8 +70,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_12_03_141757) do
   end
 
   create_table "chatrooms", force: :cascade do |t|
-    t.boolean "close", default: false
-    t.integer "grandchild_id", default: 0
+    t.boolean "close"
+    t.integer "grandchild_id"
     t.integer "grandparent_id"
     t.string "grandchild_type"
     t.string "grandparent_type"
