@@ -1,4 +1,46 @@
-.table-style {
+.title-style {
   color: white;
   border-bottom: 1px solid white;
+}
+
+.contact-style {
+  color: white;
+}
+
+.about-style {
+  color: white;
+  text-align: justify;
+
+  h1, h2{
+    font-weight: bold;
+  }
+
+  h2{
+    text-shadow: 0 0 2px #ffffffbd;
+  }
+
+  p{
+    font-size: 25px;
+  }
+}
+
+.grandma-img{
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.contacts{
+  display: flex;
+  gap: 45px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-box{
+  img{
+    max-width: 200px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+  }
 }
